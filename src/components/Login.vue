@@ -1,6 +1,15 @@
 <template>
   <v-container>
     <v-layout text-xs-center wrap>
+      <v-flex xs12>
+        <v-img
+                :src="require('../assets/trackyourlift_logo.png')"
+                class="my-3"
+                contain
+                height="200"
+        ></v-img>
+      </v-flex>
+
       <v-flex mb-5 xs12>
         <h2 class="headline font-weight-bold mb-3">Login</h2>
         <router-link tag="a" class="mr-2" to="register"
