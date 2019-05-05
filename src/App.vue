@@ -13,6 +13,12 @@
       <v-btn>
         <router-link tag="span" class="mr-2" to="about">about</router-link>
       </v-btn>
+      <v-btn>
+        <router-link tag="span" class="mr-2" to="register">register</router-link>
+      </v-btn>
+      <v-btn>
+        <router-link tag="span" class="mr-2" to="login">login</router-link>
+      </v-btn>
     </v-toolbar>
 
     <v-content>
