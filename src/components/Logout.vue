@@ -12,14 +12,8 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to TrackYourLift
+          Logged Out
         </h1>
-        <p class="subheading font-weight-regular">
-          {{ getTest }}
-          <br /><a href="https://example.com" target="_blank"
-            >Link to Something</a
-          >
-        </p>
       </v-flex>
 
       <v-flex mb-5 xs12>
@@ -60,9 +54,6 @@ export default {
     ]
   }),
   computed: {
-    getTest() {
-      return this.$store.state.test;
-    }
   }
 };
 </script>

@@ -10,16 +10,33 @@
         ></v-img>
       </v-flex>
 
-      <v-flex mb-4>
+      <v-flex xs12>
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to TrackYourLift
+         Profile
         </h1>
-        <p class="subheading font-weight-regular">
-          {{ getTest }}
-          <br /><a href="https://example.com" target="_blank"
-            >Link to Something</a
-          >
-        </p>
+      </v-flex>
+
+      <v-flex mb-4 justify-center align-center text-xs-center>
+        <v-card
+                class="mx-auto"
+                dark
+                max-width="400"
+        >
+          <v-card-title>
+            <v-icon
+                    large
+                    left
+                    dark
+            >
+              fa-user
+            </v-icon>
+            <span class="title font-weight-light text-capitalize">{{ getUser.firstName }}</span>
+          </v-card-title>
+
+          <v-card-text class="headline font-weight-bold">
+            <p>{{ getUser.email }}</p>
+          </v-card-text>
+        </v-card>
       </v-flex>
 
       <v-flex mb-5 xs12>
@@ -60,8 +77,8 @@ export default {
     ]
   }),
   computed: {
-    getTest() {
-      return this.$store.state.test;
+    getUser () {
+      return this.$store.state.user;
     }
   }
 };

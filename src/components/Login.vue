@@ -44,6 +44,7 @@
 
 <script>
 import usersAPI from "../services/usersAPI";
+import store from "../store";
 
 export default {
   data: () => ({
@@ -71,9 +72,10 @@ export default {
         let loginResponse = await usersAPI.login(payload);
 
         if (loginResponse.errors) {
-          console.log("REG FORM ERRORS", loginResponse.errors);
+          console.log("Login FORM ERRORS", loginResponse.errors);
         } else {
-          console.log("REG SUCCESS:", loginResponse);
+          store.commit('setUser', loginResponse.data);
+          this.$router.push("profile");
         }
       }
     }

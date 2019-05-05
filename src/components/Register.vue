@@ -3,10 +3,10 @@
     <v-layout text-xs-center wrap>
       <v-flex xs12>
         <v-img
-                :src="require('../assets/trackyourlift_logo.png')"
-                class="my-3"
-                contain
-                height="200"
+          :src="require('../assets/trackyourlift_logo.png')"
+          class="my-3"
+          contain
+          height="200"
         ></v-img>
       </v-flex>
 
@@ -86,6 +86,7 @@
 
 <script>
 import usersAPI from "../services/usersAPI";
+import store from "../store";
 
 export default {
   data: () => ({
@@ -128,9 +129,9 @@ export default {
 
         if (regResponse.errors) {
           console.log("REG FORM ERRORS", regResponse.errors);
-        }
-        else {
-          console.log("REG SUCCESS:", regResponse);
+        } else {
+          store.commit("setUser", regResponse.data);
+          this.$router.push("profile");
         }
       }
     },

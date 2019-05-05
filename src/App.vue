@@ -13,13 +13,16 @@
       <v-btn flat>
         <router-link tag="span" class="mr-2" to="about">about</router-link>
       </v-btn>
-      <v-btn flat>
+      <v-btn v-if="!isLoggedIn" flat>
         <router-link tag="span" class="mr-2" to="register"
           >register</router-link
         >
       </v-btn>
-      <v-btn flat>
+      <v-btn v-if="!isLoggedIn" flat>
         <router-link tag="span" class="mr-2" to="login">login</router-link>
+      </v-btn>
+      <v-btn v-else flat>
+        <router-link tag="span" class="mr-2" to="logout">logout</router-link>
       </v-btn>
     </v-toolbar>
 
@@ -58,16 +61,20 @@
 <script>
 import Home from "./components/Home";
 import About from "./components/About";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import store from "./store";
 
 export default {
   name: "App",
   components: {
     Home,
-    About
+    About,
+    Register,
+    Login
   },
   data() {
     return {
-      //
       icons: [
         {
           icon: "fab fa-twitter",
@@ -83,6 +90,22 @@ export default {
         }
       ]
     };
+  },
+  method: {
+    logout () {
+      store.commit("setUser", {});
+    }
+  },
+  computed: {
+    getUser () {
+      return this.$store.getters.user;
+    },
+    isLoggedIn () {
+      if (this.$store.getters.user["email"]) {
+        return 1;
+      }
+      return null;
+    }
   }
 };
 </script>
