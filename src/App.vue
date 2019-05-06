@@ -1,12 +1,11 @@
 <template>
   <v-app>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+      <v-toolbar-title class="headline text-uppercase hidden-sm-and-down">
         <span>Track</span>
         <span class="font-weight-light">YourLift</span>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <!--<span class="mr-2">Latest Release</span>-->
+      <v-spacer class="hidden-sm-and-down"></v-spacer>
       <v-btn flat>
         <router-link tag="span" class="mr-2" to="/">home</router-link>
       </v-btn>
@@ -14,9 +13,7 @@
         <router-link tag="span" class="mr-2" to="about">about</router-link>
       </v-btn>
       <v-btn v-if="!isLoggedIn" flat>
-        <router-link tag="span" class="mr-2" to="register"
-          >register</router-link
-        >
+        <router-link tag="span" class="mr-2" to="register">register</router-link>
       </v-btn>
       <v-btn v-if="!isLoggedIn" flat>
         <router-link tag="span" class="mr-2" to="login">login</router-link>
