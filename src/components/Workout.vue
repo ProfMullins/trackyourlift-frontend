@@ -74,7 +74,6 @@ export default {
   methods: {
     validateWorkout() {
       this.valid = this.$refs.form.validate();
-      console.log("WORKOUT VALID", this.valid);
     },
     async submitWorkout() {
       this.validateWorkout();
