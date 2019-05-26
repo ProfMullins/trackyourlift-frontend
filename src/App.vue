@@ -21,6 +21,9 @@
       <v-btn v-else flat>
         <router-link tag="span" class="mr-2" to="logout">logout</router-link>
       </v-btn>
+      <v-btn v-if="isLoggedIn" flat>
+        <router-link tag="span" class="mr-2" to="workout">workout</router-link>
+      </v-btn>
     </v-toolbar>
 
     <v-content>
@@ -60,6 +63,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Workout from "./components/Workout";
+import Lift from "./components/Lift";
+import Set from "./components/Set";
 import store from "./store";
 
 export default {
@@ -68,7 +74,10 @@ export default {
     Home,
     About,
     Register,
-    Login
+    Login,
+    Workout,
+    Lift,
+    Set
   },
   data() {
     return {

@@ -155,8 +155,8 @@ export default {
     generateDays() {
       let days = [];
 
-      if (this.month) {
-        for (var i = 1; i <= new Date(year, month, 0).getDate(); i++) {
+      if (this.birthMonth) {
+        for (var i = 1; i <= new Date(this.birthYear, this.birthMonth, 0).getDate(); i++) {
           days.push(i.toString());
         }
       } else {

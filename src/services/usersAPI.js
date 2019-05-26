@@ -32,7 +32,7 @@ export default {
     let errors = checkPassword(payload['password']);
 
     if (errors.length === 0) {
-      return axios.post("/", payload);
+      return axios.post("users/", payload);
     }
     else {
       console.log("reg errors:" , errors);
@@ -44,7 +44,7 @@ export default {
     let errors = checkPassword(payload['password']);
 
     if (errors.length === 0) {
-      return axios.post("/login/", payload);
+      return axios.post("users/login/", payload);
     }
     else {
       console.log("login errors:", errors);

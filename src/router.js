@@ -6,6 +6,9 @@ import Register from "./views/Register.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Profile from "./views/Profile.vue";
+import Workout from "./views/Workout.vue";
+import Lift from "./views/Lift.vue";
+import Set from "./views/Set.vue";
 
 Vue.use(Router);
 
@@ -40,6 +43,21 @@ export default new Router({
       path: "/profile",
       name: "profile",
       component: Profile
+    },
+    {
+      path: "/workout",
+      name: "workout",
+      component: Workout
+    },
+    {
+      path: "/lift",
+      name: "lift",
+      component: Lift
+    },
+    {
+      path: "/set",
+      name: "set",
+      component: Set
     }
   ]
 });
